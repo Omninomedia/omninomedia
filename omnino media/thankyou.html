@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00bfff;
+    }
+
+    p {
+      max-width: 600px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #00bfff;
+    }
+    .proceed-button {
+            background: linear-gradient(135deg, #00bfff 0%, #00bfff 100%);
+            color: #000000;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+        
+            border-radius: 55px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 15%;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .proceed-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+        }
+  </style>
+</head>
+<body>
+  <h1>Thank You for Your Purchase!</h1>
+  <p>
+    Your payment was successful. Please enter your email address again to receive your ebook.
+  </p>
+  <button type="button" id="enterBtn" class="proceed-button">Enter</button> 
+  <p>
+    If you don’t see it in your inbox within a few minutes, please check your <span class="highlight">Spam or Promotions</span> folder.
+  </p>
+  <p>
+    Make sure to mark our email as <span class="highlight">Safe / Not Spam</span> so future emails land in your inbox.
+  </p>
+  <p>
+    If you still can’t find the email, contact us at <span class="highlight">chalwe@omninomedia.com</span>
+  </p>
+  
+  <script>
+    document.getElementById('enterBtn').onclick = function() {
+      window.open('https://form.typeform.com/to/SnccbjiS', );
+    };
+  </script>
+</body>
+
+</html>

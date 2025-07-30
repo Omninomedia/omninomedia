@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Marketing Playbook - Omnino Media</title>
+    <script src="https://pay.lenco.co/js/v1/inline.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #000000;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 191, 255, 0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 191, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #00bfff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subheading {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ebook-cover {
+            max-width: 350px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0, 191, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .ebook-cover:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        /* Main Content */
+        .main-content {
+            background: #000000;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .highlight {
+            color: #00bfff;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #000000;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00bfff 0%, #0080ff 100%);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 191, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.2);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #000000;
+            font-weight: 700;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: #000000;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: #00bfff;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: serif;
+            opacity: 0.7;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #cccccc;
+            line-height: 1.6;
+            padding-top: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-role {
+            color: #00bfff;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            background: #000000;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #00bfff;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #00bfff 0%, #0080ff 100%);
+            color: #000000;
+            padding: 20px 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(0, 191, 255, 0.6);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Form Styles */
+        .purchase-form {
+            display: none;
+            max-width: 500px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 191, 255, 0.2);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid rgba(0, 191, 255, 0.3);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00bfff;
+            box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.2);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .form-group input::placeholder {
+            color: #888888;
+        }
+
+        .proceed-button {
+            background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+            color: #000000;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .proceed-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .subheading {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                max-width: 500px;
+            }
+
+            .purchase-form {
+                margin: 0 20px;
+                padding: 2rem;
+            }
+
+            .price {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.1rem;
+            }
+
+            .feature-card,
+            .testimonial {
+                padding: 2rem;
+            }
+            .hero-image {
+                text-align: center;
+                height: 100px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="c:\Users\SwiftVib Electronics\Downloads\logo.png" alt="Omnino Media" class="logo">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Unlock AI-Powered Growth for Your Marketing Agency</h1>
+                    <p class="subheading">A playbook for marketing agencies and business owners ready to automate and scale.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="c:\Users\SwiftVib Electronics\Downloads\ebook cover.jpg" alt="AI Marketing Playbook"  sizes="100px" class="cover" ebook-cover >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="section-title">Why AI Is No Longer Optional</h2>
+                    <p class="about-text">
+                        The marketing landscape has shifted forever. While your competitors struggle with manual processes and outdated strategies, 
+                        <span class="highlight">smart agencies are leveraging AI to work 10x faster and deliver better results</span>. 
+                        This playbook reveals the exact AI tools and automation workflows that successful agencies use to 
+                        <span class="highlight">get more clients, streamline operations, and dramatically reduce costs</span>. 
+                        Stop falling behind – it's time to embrace the AI advantage.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">What You'll Master</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h3>Automate Content Creation in Minutes</h3>
+                        <p>Generate high-converting copy, social media posts, and email campaigns using proven AI frameworks that maintain your brand voice.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h3>Build Smarter Campaigns with AI Tools</h3>
+                        <p>Deploy intelligent targeting, predictive analytics, and automated optimization to maximize ROI on every campaign.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h3>Save 10+ Hours/Week Using Automation</h3>
+                        <p>Implement bulletproof workflows that handle lead nurturing, client communication, and reporting while you focus on growth.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h3>Close More Clients with Smarter Outreach</h3>
+                        <p>Use AI-powered research and personalization to craft irresistible proposals that convert prospects into high-value clients.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"></div>
+                        <h3>Scale Without Hiring More Staff</h3>
+                        <p>Build systems that handle 3x more clients with your current team size, boosting profit margins and reducing overhead.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">Success Stories</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-text">This playbook transformed our agency overnight. We're now delivering campaigns 5x faster while our clients see 40% better results. The AI automation workflows alone saved us from hiring two additional team members.</p>
+                        <div class="testimonial-author">Agnes Mwanza</div>
+                        <div class="testimonial-role">Brand Strategist, Creative Pulse Agency</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-text">Finally, a practical guide that actually works. We implemented the AI outreach system and landed 3 new clients in the first month. Our content production speed increased by 300% without sacrificing quality.</p>
+                        <div class="testimonial-author">James Phiri</div>
+                        <div class="testimonial-role">Digital Agency Owner, Growth Labs Zambia</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="price">K297</div>
+                <button id="buyNowBtn" class="cta-button">Buy Now for K297</button>
+                
+                <div id="purchaseForm" class="purchase-form">
+                    <h3 class="form-title">Complete Your Purchase</h3>
+                    <form id="customerForm">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <button type="button" id="proceedBtn" class="proceed-button">Proceed to Payment</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // DOM elements
+        const buyNowBtn = document.getElementById('buyNowBtn');
+        const purchaseForm = document.getElementById('purchaseForm');
+        const proceedBtn = document.getElementById('proceedBtn');
+        const customerForm = document.getElementById('customerForm');
+
+        // Show form when Buy Now is clicked
+        buyNowBtn.addEventListener('click', function() {
+            buyNowBtn.style.display = 'none';
+            purchaseForm.style.display = 'block';
+            
+            // Smooth scroll to form
+            purchaseForm.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        });
+
+        // Handle form submission
+        proceedBtn.addEventListener('click', function() {
+            // Basic form validation
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!firstName || !lastName || !email || !phone) {
+                alert('Please fill in all fields before proceeding.');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Call the payment function
+            getPaidWithLenco();
+        });
+
+// Payment function - to be implemented
+function getPaidWithLenco() {
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const reference = "omnino-" + Date.now();
+
+    LencoPay.getPaid({
+        key: "pub-21d54ff3811b1bbb33dde71008db9c56e7f19be5983037f9",
+        reference,
+        email,
+        amount: 0.5, // K297 in ngwee
+        currency: "ZMW",
+        channels: ["mobile-money", "card"],
+        customer: {
+            firstName,
+            lastName,
+            phone,
+        },
+        // ...existing code...
+onSuccess: function () {
+  // Send to Make webhook
+  fetch("https://hook.eu2.make.com/5lojct1r8g7rkhxvu867j7rssws1htih", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      reference: reference, // use the correct variable
+      email: email,
+      firstName: firstName
+    })
+  });
+
+  // Redirect to thank you page (use a relative path or URL)
+  window.location.href = "thankyou.html";
+}
+// ...existing code...
+    });
+}
+
+        // Smooth scrolling enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            document.documentElement.style.scrollBehavior = 'smooth';
+        });
+    </script>
+</body>
+</html>
